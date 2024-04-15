@@ -40,14 +40,26 @@
 
     ];
 
-foreach ($hotels as $hotel){
-    echo $hotel['name'];
-    echo $hotel['description'];
-    echo 'Valutazione: ' . $hotel['vote'];
-    echo 'Distanza dal centro: ' . $hotel['distance_to_center'] . 'km';
-    echo '------------';
-}
-
-
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Hotels</title>
+</head>
+<body>
+    <h2>Lista Hotel</h2>
+    <?php
+    foreach ($hotels as $hotel){
+        echo '<div>';
+        echo '<h3>' . $hotel['name'] . '</h3>';
+        echo '<p>' . $hotel['description'] . '</p>';
+        echo '<h4>Valutazione: ' . $hotel['vote'] . '/5</h4>';
+        echo '<p>Distanza dal centro: ' . $hotel['distance_to_center'] . 'km</p>';
+        echo '</div>';
+}
+    ?>
+</body>
+</html>
