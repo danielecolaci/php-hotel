@@ -48,18 +48,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Hotels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px; /* Spazio per il navbar in caso di espansione */
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .table thead th {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+    </style>
 </head>
 <body>
-    <h2>Lista Hotel</h2>
-    <?php
-    foreach ($hotels as $hotel){
-        echo '<div>';
-        echo '<h3>' . $hotel['name'] . '</h3>';
-        echo '<p>' . $hotel['description'] . '</p>';
-        echo '<h4>Valutazione: ' . $hotel['vote'] . '/5</h4>';
-        echo '<p>Distanza dal centro: ' . $hotel['distance_to_center'] . 'km</p>';
-        echo '</div>';
-}
-    ?>
+    <div class="container">
+        <h2 class="mt-4 mb-3">Lista Hotel</h2>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Hotel</th>
+                    <th>Descrizione</th>
+                    <th>Valutazione</th>
+                    <th>Distanza dal Centro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $hotel):?>
+                <tr>
+                    <th><?php echo $hotel['name']; ?></th>
+                    <td><?php echo $hotel['description'];?></td>
+                    <td><?php echo $hotel['vote'];?>/5</td>
+                    <td><?php echo $hotel['distance_to_center']; ?>km</td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
