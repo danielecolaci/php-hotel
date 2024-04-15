@@ -40,4 +40,14 @@
 
     ];
 
+foreach ($hotels as $hotel){
+    echo $hotel['name'];
+    echo $hotel['description'];
+    echo 'Valutazione: ' . $hotel['vote'];
+    echo 'Distanza dal centro: ' . $hotel['distance_to_center'] . 'km';
+    echo '------------';
+}
+
+
+
 ?>
