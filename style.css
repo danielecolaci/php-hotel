@@ -11,13 +11,16 @@ body {
     margin-top: 20px;
 }
 
-.table th,
-.table td {
-    vertical-align: middle;
-}
-
 .table thead th {
     background-color: #007bff;
     color: #ffffff;
     border-color: #007bff;
+}
+
+.fa-circle-check {
+    color: green;
+}
+
+.fa-circle-xmark {
+    color: red;
 }
